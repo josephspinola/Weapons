@@ -37,24 +37,24 @@ del Inventory[Selection_2]
 # Notify the user of his weapons and to prepare for battle
 
 print('\n\nWE ARE WAR READY!','\n\nHere is your War Inventory: ', War_Inventory2)
-print(input('\n\nPress Enter to Advance')
+print(input('\n\nPress Enter to Advance'))
 
 
 # Create a scene route option
 # Assign the routes as variables
 
-route1 = 1
-route2 = 2
+Route1 = 1
+Route2 = 2
 
 print('\n\nWe now must choose our path in the split road')
 print('\n\nRoute 1 - Magic Mushrooms','\nRoute 2 - Foresty Ganja')
-Route = int(input('\n\nChoose a route: '))
+User_Route = int(input('\n\nChoose a route: '))
 
 # If route 1 is chosen
 # Add a treasure chest of gold and rubies to the user 
 # Add the list of gold and rubies to the current war inventory list
 
-if Route == Route1: 
+if User_Route == Route1: 
     Gold = ['Gold','Rubies']
     War_Inventory2 += Gold
 
@@ -65,7 +65,7 @@ if Route == Route1:
 # Add a bong and snack pack
 # Add the new items to the current inventory list
 
-elif Route == Route2:
+elif User_Route == Route2:
     Ganja = ['Bong','Snack Pack']
     print('\n\n\nCONGRATS YOU FOUND A BONG AND SNACK PACK!')
     print('\n\nHere is what you will go to battle with now: ','\n\n',War_Inventory2)
