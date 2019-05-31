@@ -67,9 +67,9 @@ if User_Route == Route1:
 
 elif User_Route == Route2:
     Ganja = ['Bong','Snack Pack']
+    War_Inventory2 += Ganja
     print('\n\n\nCONGRATS YOU FOUND A BONG AND SNACK PACK!')
     print('\n\nHere is what you will go to battle with now: ','\n\n',War_Inventory2)
-    War_Inventory2 += Ganja
       
 
 # Now ask if the user would like to purchase a crossbow for gold and rubies
