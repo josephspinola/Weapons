@@ -1,85 +1,39 @@
-# Create a heros inventory list and allow the user to select the weapons
-# After the weapon selection place gold and rubies in the list by finding a "Chest"
+#High Score game 2.0 Display the names and only the top 3 scores
 
-# Welcome the user and define the list and the elements it will contain
+# Welcome the user to the game
 
+print('\n\nWelcome User to High Score 2.0','\U0001f600'*3)
 
-print("\nWelcome to the hero's game","\n\nThe selection of weapons is below....\n\n")
-Inventory = ['Shield','Sword','Potion','Magic','Spell']
+# Assign the Users Choice and Scores List
 
-# Access the elements from the Inventory using x and display the Inventory
+highScores = [('Joe',5000),('Shmo',6000),('Tod',3000),('Doe',10,000),('Low',2000)]
+choice = None
 
-for x in Inventory:
-    print(x)
+# Display the menu options
 
+print('\n\nMenu Options','\nQuit-0','\nList Scores-1','\nAdd Score-2')
 
-# Allow the user to select 2 weapons of choice for battle from the Inventory
-# Assign the new Inventory for war
+# Ask the user for his choice and then list the sequences for the menu options
 
-print('\n\nNow select 2 weapons of your choice')
+while choice != 0:
+    choice = int(input('\n\nSelect a menu option: '))
+    
 
-Selection_1 = int(input('\n\nWeapon #1 : '))
+    if choice == 1:
+        print('\n\nHere are the top 3 HIGH SCORES\n')
+        for x in highScores:
+            name, score = x
+            print(name,score)
+        
 
-War_Inventory = Inventory[Selection_1]
-del Inventory[Selection_1]
-
-#Display the rest of the elements in Inventory for the user to select from
-
-print("\n\nHere is what's left choose wisely....")
-for a in Inventory:
-    print(a)
-
-Selection_2 = int(input('\n\nWeapon #2 : '))
-War_Inventory2 = [War_Inventory,Inventory[Selection_2]]
-del Inventory[Selection_2]
-  
-
-# Notify the user of his weapons and to prepare for battle
-
-print('\n\nWE ARE WAR READY!','\n\nHere is your War Inventory: ', War_Inventory2)
-print(input('\n\nPress Enter to Advance'))
+    elif choice == 2:
+        addedName = input('Enter Name : ')
+        addedScore = int(input('Add score: '))
+        entry = (addedName,addedScore)
+        highScores.append(entry)
+        print('\n\nHere is the updated scores : ',highScores)
 
 
-# Create a scene route option
-# Assign the routes as variables
-
-Route1 = 1
-Route2 = 2
-
-print('\n\nWe now must choose our path in the split road')
-print('\n\nRoute 1 - Magic Mushrooms','\nRoute 2 - Foresty Ganja')
-User_Route = int(input('\n\nChoose a route: '))
-
-# If route 1 is chosen
-# Add a treasure chest of gold and rubies to the user 
-# Add the list of gold and rubies to the current war inventory list
-
-if User_Route == Route1: 
-    Gold = ['Gold','Rubies']
-    War_Inventory2 += Gold
-
-    print('\n\n\nCONGRATS YOU FOUND GOLD AND RUBIES!')
-    print('\n\nHere is what you will go to battle with now: ','\n\n',War_Inventory2)
-
-# If route 2 is chosen
-# Add a bong and snack pack
-# Add the new items to the current inventory list
-
-elif User_Route == Route2:
-    Ganja = ['Bong','Snack Pack']
-    War_Inventory2 += Ganja
-    print('\n\n\nCONGRATS YOU FOUND A BONG AND SNACK PACK!')
-    print('\n\nHere is what you will go to battle with now: ','\n\n',War_Inventory2)
-      
-
-# Now ask if the user would like to purchase a crossbow for gold and rubies
-# Assign the users variable
-print('\n\nHere is a crossbow for your gold and rubies')
-
-War_Inventory2[2:4] = ['Crossbow']
-
-
-print('\n\nHere is the new weapon list for war: ', War_Inventory2)
 
 
 
